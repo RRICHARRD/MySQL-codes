@@ -1,6 +1,10 @@
 use cursos;
 describe cursos;
+/*criar tabelas utilizando os campos de outra*/
 create table cursosVerao like cursos;
+
+/*essa que acho que cria utilizando não só os campos de outra tabela, mas também tudo o que tiver presente dentro dos respectivos campos*/
+CREATE TABLE name SELECT * FROM courses; 	
 
 desc cursosVerao;
 /*renomeando a tabela*/
