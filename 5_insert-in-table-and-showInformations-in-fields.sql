@@ -9,7 +9,7 @@ DESCRIBE clientes;
 
 -- COMMENTS CAN BE WRITTEN BY TWO LINES AND ONE SPACE
 
-alter table clientes drop dataNacimento;
+alter table clientes drop dataNacimento; 
 alter table clientes add column dataNascimento date after dataNacimento;
 
 -- Inserindo informações dentro da tabela clientes, o que não é obrigatório eu não posso optar por não inserir nada 
@@ -46,3 +46,15 @@ insert into clientes values
 
 -- O * traz todos os campos da tabela clientes
 select * from clientes; 
+
+-- Alterar informações da tabela 
+-- Nunca faça o sequintes código 
+update clientes set DataNascimento = '1999-12-20'; -- isso apaga a tabela do banco de dados INTEIRA, se fizer isso será demitido.
+update clientes set ufNascimento = 'mg' where ufNascimento is null; -- Não funciona como o da linha 53, devido ao fato do safe update estar ligado, necessitando utilizar uma chave primária
+/*Para desligar o safe mode, Edit -> Preferences -> Sql editor, lá no final, salvar sair da seção, depois entrar novamente*/
+/*Toda muito cuidado com esses códigos, caso contrário você pode ser demitido*/
+
+-- Utilize esse código 
+update clientes set DataNascimento = '8888-7-06' where idCliente=1;
+update clientes set DataNascimento = '8888-7-06', ufNascimento = 'am' where idCliente=1;
+
