@@ -68,5 +68,5 @@ delete from clientes where dataNascimento is null; -- apaga tudo que é possui a
 delete from clientes; -- vai ser feito linha por linha, mas muito rápido
 /*O DELETE FOI FEITO PARA NUNCA SER UTILIZADO, O IDEAL É MARCAR COMO APAGADO*/
 
--- Apaga a tabela e cria de novo vazio
+-- Apaga a tabela e cria de novo como todos os campos vazios
 truncate table clientes;
